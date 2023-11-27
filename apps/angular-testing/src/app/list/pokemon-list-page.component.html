@@ -1,0 +1,17 @@
+<div
+  *ngIf="loading$ | async"
+  class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600 flex flex-col items-center m-auto"
+></div>
+<angular-testing-pokemon-list
+  *ngIf="listResponse$ | async as listResponse"
+  [pokemons]="listResponse.results"
+  [allItemsCount]="listResponse.count"
+  [currentPage]="page$ | async"
+  [navigationButtonsDisabled]="loading$ | async"
+  (nextPageClick)="nextPage()"
+  (previousPageClick)="prevPage()"
+>
+</angular-testing-pokemon-list>
+<div *ngIf="error$ | async" class="flex flex-col items-center">
+  <div>Error occurred while fetching data</div>
+</div>

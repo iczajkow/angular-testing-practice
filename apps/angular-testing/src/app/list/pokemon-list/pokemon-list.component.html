@@ -1,0 +1,21 @@
+<div class="flex flex-col items-center">
+  <div class="font-bold m-2">Pokemon count: {{ allItemsCount }}</div>
+  <ul class="flex flex-col items-center">
+    <li *ngFor="let pokemon of pokemons" angularTestingHighlight>
+      {{ pokemon.name }}
+    </li>
+  </ul>
+  <div class="font-bold m-2">Page: {{ currentPage }}</div>
+  <div class="flex">
+    <angular-testing-navigation-button
+      content="Previous"
+      [disabled]="navigationButtonsDisabled"
+      (buttonClick)="previousPageClick.emit()"
+    ></angular-testing-navigation-button>
+    <angular-testing-navigation-button
+      content="Next"
+      [disabled]="navigationButtonsDisabled"
+      (buttonClick)="nextPageClick.emit()"
+    ></angular-testing-navigation-button>
+  </div>
+</div>

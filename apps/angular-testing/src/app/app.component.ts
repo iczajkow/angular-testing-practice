@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PokemonApiService } from './api/pokemon-api.service';
 
 @Component({
   standalone: true,
@@ -9,14 +8,6 @@ import { PokemonApiService } from './api/pokemon-api.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'angular-testing';
-
-  constructor(private readonly pokemonApiService: PokemonApiService) {}
-
-  ngOnInit() {
-    this.pokemonApiService.getList(10, 0).subscribe((response) => {
-      console.log(response);
-    });
-  }
 }
