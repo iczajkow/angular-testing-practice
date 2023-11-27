@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NavigationButtonComponent } from './navigation-button/navigation-button.component';
 import { HighlightDirective } from './highlight/highlight.directive';
 import { PokemonListPageComponent } from './pokemon-list-page.component';
+import { SomeDumbService } from './some-dumb-service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PokemonListPageComponent } from './pokemon-list-page.component';
       },
     ]),
   ],
+  providers: [SomeDumbService],
   exports: [PokemonListPageComponent],
 })
 export class PokemonListModule {}

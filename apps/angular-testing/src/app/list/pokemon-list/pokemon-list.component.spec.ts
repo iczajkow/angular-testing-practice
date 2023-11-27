@@ -3,6 +3,7 @@ import { PokemonListComponent } from './pokemon-list.component';
 import { NavigationButtonComponent } from '../navigation-button/navigation-button.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { SomeDumbService } from '../some-dumb-service';
 
 describe('PokemonListComponent With Dependency', () => {
   let component: PokemonListComponent;
@@ -11,6 +12,7 @@ describe('PokemonListComponent With Dependency', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PokemonListComponent, NavigationButtonComponent],
+      providers: [SomeDumbService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonListComponent);
