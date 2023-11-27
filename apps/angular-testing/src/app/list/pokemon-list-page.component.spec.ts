@@ -7,7 +7,7 @@ describe('PokemonListPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokemonListPageComponent],
+      declarations: [PokemonListPageComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonListPageComponent);
