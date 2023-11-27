@@ -1,8 +1,10 @@
 <div
   *ngIf="loading$ | async"
+  data-testid="loading-spinner"
   class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600 flex flex-col items-center m-auto"
 ></div>
 <angular-testing-pokemon-list
+  data-testid="pokemon-list"
   *ngIf="listResponse$ | async as listResponse"
   [pokemons]="listResponse.results"
   [allItemsCount]="listResponse.count"
