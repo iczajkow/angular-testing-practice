@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { PokemonListResponse } from './models/pokemon-list-response';
 import { PokemonDetailsResponse } from './models/pokemon-details-response';
 
@@ -17,9 +17,13 @@ export class PokemonApiService {
     });
   }
 
-  getOne(nameOrId: string): Observable<PokemonDetailsResponse> {
-    return this.http.get<PokemonDetailsResponse>(
-      `${BASE_URL}pokemon/${nameOrId}`
-    );
+  getOne(nameOrId: string): Observable<any> {
+    return this.http
+      .get<PokemonDetailsResponse>(`${BASE_URL}pokemon/${nameOrId}`)
+      .pipe(
+        map(() => {
+          return 'dupa';
+        })
+      );
   }
 }

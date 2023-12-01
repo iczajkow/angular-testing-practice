@@ -14,7 +14,6 @@ export class CounterComponent {
   increment() {
     this.value++;
   }
-
   decrement() {
     if (this.value > 0) {
       this.value--;
